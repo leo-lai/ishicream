@@ -15,6 +15,25 @@
     </div>
 
     <router-view></router-view>
+
+    <div class="footer">
+      <div class="inner">
+        <div class="flex">
+          <div class="left">
+            <img class="logo" src="./assets/logo.jpg" alt="" />
+            <p>All Right Reserved @ ishicream.com</p>
+          </div>
+          <div class="rest"></div>
+          <div class="right">
+            <div class="mail">
+              <label>Get On The Lists</label>
+              <input placeholder="Enter your email address" />
+              <button class="btn btn-01">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -85,6 +104,35 @@
       border-bottom: 2px solid transparent;
       &:hover {
         border-bottom-color: #453a9a;
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 100px;
+  .inner {
+    padding: 30px 0;
+    border-top: 1px solid #f1f1f1;
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  .right {
+    .mail {
+      label {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      input {
+        height: 40px;
+        width: 200px;
+        background-color: #f1f3ff;
+        padding: 5px 15px;
+        border: none;
+        outline: none;
       }
     }
   }
