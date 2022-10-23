@@ -1,22 +1,92 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div class="app">
+    <div class="header">
+      <div class="inner">
+        <img class="logo" src="./assets/logo.jpg" alt="" />
+        <div class="menu">
+          <a href="#">Explore</a>
+          <a href="#">Marketplace</a>
+          <a href="#">Community</a>
+          <a href="#">Support</a>
+          <a href="#">My DApp</a>
+        </div>
+        <a class="btn btn-01">Connect Wallet</a>
+      </div>
+    </div>
+
+    <router-view></router-view>
+  </div>
 </template>
 
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-
+<script setup lang="ts">
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+.flex {
+  display: flex;
+  .rest {
+    flex: 1;
+  }
+  .half {
+    width: 50%;
+  }
+}
+.inner {
+  width: 1200px;
+  margin: auto;
+  max-width: 100%;
+}
+.btn {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  &:active {
+    opacity: 0.8;
+  }
+
+  &.btn-01 {
+    background-color: #453a99;
+    color: #fff;
+  }
+  &.btn-02 {
+    background-color: #1da1f3;
+    color: #fff;
+  }
+}
+
+.header {
+  .inner {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 80px;
+    padding: 10px 0;
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  .menu {
+    flex: 1;
+    text-align: left;
+    padding: 0 35px;
+    a {
+      font-size: 18px;
+      display: inline-block;
+      padding: 5px 0;
+      margin: 0 15px;
+      border-bottom: 2px solid transparent;
+      &:hover {
+        border-bottom-color: #453a9a;
+      }
+    }
+  }
 }
 </style>
