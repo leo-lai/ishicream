@@ -195,6 +195,70 @@
         </div>
       </div>
     </section>
+
+    <section class="section-06">
+      <div class="inner">
+        <h1 class="section-h1 tc">RoadMap</h1>
+        <ul class="roadmap">
+          <li class="_item _active">
+            <b class="_i">01</b>
+            <div class="_cont">
+              <h4>Q1 2023</h4>
+              <p>
+                Project 1.0 official version online The first batch of NFTs were launched for sale At the same time
+                gradually open the deployment of machines in other regions of New Zealand (New Zealand only), while
+                starting DoggyDAO management core decision-making model.
+              </p>
+            </div>
+          </li>
+          <li class="_item">
+            <b class="_i">02</b>
+            <div class="_cont">
+              <h4>Q2 2023</h4>
+              <p>
+                Project 2.0 will be launched and based on the project operation in New Zealand and feedback from
+                customers and SHIB community. the deployment of machines in other regions of the world will be gradually
+                opened, and the corresponding NFTs will be sold at the same time.
+              </p>
+            </div>
+          </li>
+          <li class="_item">
+            <b class="_i">03</b>
+            <div class="_cont">
+              <h4>Q1 2023</h4>
+              <p>
+                After the project is fully stabilized, IceShiba will start to explore more unmanned retail models, such
+                as coffee, noodles, dumplings, etc. With the existing global network resources and the strong aggregaion
+                power of SHIB community, we will quickly replicate, deploy and operate the relevant machines, and
+                repidly improve the project’s revenue and profitability
+              </p>
+            </div>
+          </li>
+          <li class="_item">
+            <b class="_i">04</b>
+            <div class="_cont">
+              <h4>Q4 2022</h4>
+              <p>
+                Debugging of unmanned vending machines completed, platfrom beta 1.0 online testing, equipment deployed
+                to formal commercial environment, core SHIB community members invited to participte in project testing,
+                and continue to fix bugs and optimize processes to achieve formal commercialization purposes.
+              </p>
+            </div>
+          </li>
+          <li class="_item">
+            <b class="_i">05</b>
+            <div class="_cont">
+              <h4>Q5 2022</h4>
+              <p>
+                Project launch, underlying business model and economic model determined core team members identified.
+                Negotiation and contracting of partners for raw materials, sites, equipment, payment, etc, completed.
+                And IceShiba official website is released.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -248,6 +312,70 @@ onMounted(() => {
     grid-column: 1 / span 2;
   }
 }
+.roadmap {
+  width: 80%;
+  margin: auto;
+  ._item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  ._i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #453a9a;
+    color: #fff;
+    position: relative;
+    margin-right: 30px;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 2px;
+      background-color: #453a9a;
+      right: -8px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: #453a9a;
+      right: -14px;
+      border-radius: 50%;
+    }
+  }
+
+  ._cont {
+    flex: 1;
+    position: relative;
+    box-sizing: border-box;
+    padding: 7px 0 7px 30px;
+    h4 {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8px;
+      height: 100%;
+      border: 1px solid #453a9a;
+    }
+  }
+  ._active {
+    ._cont::before {
+      background-color: #453a9a;
+    }
+  }
+}
+
 .section-h1 {
   font-size: 40px;
   font-weight: bold;
@@ -361,5 +489,8 @@ onMounted(() => {
       font-weight: bold;
     }
   }
+}
+.section-06 {
+  padding: 30px 0;
 }
 </style>

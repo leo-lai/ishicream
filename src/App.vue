@@ -43,6 +43,12 @@
 </script>
 
 <style lang="scss">
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
 .flex {
   display: flex;
   .rest {
@@ -110,7 +116,7 @@
 }
 
 .footer {
-  margin-top: 100px;
+  margin-top: 50px;
   .inner {
     padding: 30px 0;
     border-top: 1px solid #f1f1f1;
