@@ -14,15 +14,15 @@
             <button class="btn btn-01">Mint Now</button>
             <ul>
               <li>
-                <b>10K+</b>
+                <b>{{ number.rare }}K+</b>
                 <p>RARe NFT’s</p>
               </li>
               <li>
-                <b>70K+</b>
+                <b>{{ number.products }}K+</b>
                 <p>PRODUCTS</p>
               </li>
               <li>
-                <b>50K+</b>
+                <b>{{ number.artist }}K+</b>
                 <p>NFT ARTIST</p>
               </li>
             </ul>
@@ -195,7 +195,6 @@
         </div>
       </div>
     </section>
-
     <section class="section-06">
       <div class="inner">
         <h1 class="section-h1 tc">RoadMap</h1>
@@ -263,13 +262,16 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref, onMounted } from 'vue'
+import { defineProps, ref, onMounted, reactive } from 'vue'
 import { useNow, useDateFormat } from '@vueuse/core'
+import anime from 'animejs'
+
+// import WOW from 'wow.js'
 import Swiper, { EffectCoverflow } from 'swiper'
 Swiper.use([EffectCoverflow])
 
 const remainTime = useDateFormat(useNow(), 'HH:mm:ss')
-
+const number = reactive({ rare: 0, products: 0, artist: 0 })
 onMounted(() => {
   new Swiper('.swiper', {
     effect: 'coverflow',
@@ -285,6 +287,17 @@ onMounted(() => {
       modifier: 3,
       slideShadows: false,
     },
+  })
+
+  anime({
+    targets: number,
+    rare: 10,
+    products: 70,
+    artist: 50,
+    easing: 'linear',
+    round: 1,
+    delay: 200,
+    update: function () {},
   })
 })
 </script>
@@ -366,12 +379,28 @@ onMounted(() => {
       top: 0;
       width: 8px;
       height: 100%;
-      border: 1px solid #453a9a;
+      background-color: #453a9a;
+      clip-path: polygon(
+        0 0,
+        0 calc(100% - 4px),
+        1px calc(100% - 4px),
+        1px 2px,
+        50% 6px,
+        calc(100% - 1px) 2px,
+        calc(100% - 1px) calc(100% - 4px),
+        50% calc(100% - 1px),
+        1px calc(100% - 4px),
+        0 calc(100% - 4px),
+        50% 100%,
+        100% calc(100% - 4px),
+        100% 0,
+        50% 5px
+      );
     }
   }
   ._active {
     ._cont::before {
-      background-color: #453a9a;
+      clip-path: polygon(0 0, 4px 4px, 8px 0, 8px calc(100% - 4px), 4px 100%, 0 calc(100% - 4px));
     }
   }
 }

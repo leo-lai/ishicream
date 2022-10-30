@@ -1,35 +1,37 @@
 <template>
-  <div class="app">
-    <div class="header">
-      <div class="inner">
-        <img class="logo" src="./assets/logo.jpg" alt="" />
-        <div class="menu">
-          <a href="#">Explore</a>
-          <a href="#">Marketplace</a>
-          <a href="#">Community</a>
-          <a href="#">Support</a>
-          <a href="#">My DApp</a>
-        </div>
-        <a class="btn btn-01">Connect Wallet</a>
+  <div class="header">
+    <div class="inner">
+      <a class="logo" href="/">
+        <img src="./assets/logo.jpg" alt="" />
+      </a>
+      <div class="menu">
+        <a
+          v-for="item in menuList"
+          :class="{ active: item.hash ? route.hash === item.hash : route.path === item.path }"
+          :href="item.path + item.hash"
+        >
+          {{ item.name }}
+        </a>
       </div>
+      <a class="btn btn-01">Connect Wallet</a>
     </div>
+  </div>
 
-    <router-view></router-view>
+  <router-view></router-view>
 
-    <div class="footer">
-      <div class="inner">
-        <div class="flex">
-          <div class="left">
-            <img class="logo" src="./assets/logo.jpg" alt="" />
-            <p>All Right Reserved @ ishicream.com</p>
-          </div>
-          <div class="rest"></div>
-          <div class="right">
-            <div class="mail">
-              <label>Get On The Lists</label>
-              <input placeholder="Enter your email address" />
-              <button class="btn btn-01">→</button>
-            </div>
+  <div class="footer">
+    <div class="inner">
+      <div class="flex">
+        <div class="left">
+          <img class="logo" src="./assets/logo.jpg" alt="" />
+          <p>All Right Reserved @ ishicream.com</p>
+        </div>
+        <div class="rest"></div>
+        <div class="right">
+          <div class="mail">
+            <label>Get On The Lists</label>
+            <input placeholder="Enter your email address" />
+            <button class="btn btn-01">→</button>
           </div>
         </div>
       </div>
@@ -40,6 +42,18 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md
+
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+const menuList = ref([
+  { name: 'Explore', path: '', hash: '' },
+  { name: 'Marketplace', path: '', hash: '' },
+  { name: 'Community', path: '', hash: '' },
+  { name: 'Support', path: '', hash: '' },
+  { name: 'My DApp', path: '/', hash: '#MyDapp' },
+])
+
+const route = useRoute()
 </script>
 
 <style lang="scss">
@@ -95,8 +109,13 @@
     padding: 10px 0;
   }
   .logo {
+    display: inline-block;
     width: 40px;
     height: 40px;
+    img {
+      max-width: 100%;
+      height: 100%;
+    }
   }
   .menu {
     flex: 1;
@@ -108,13 +127,17 @@
       padding: 5px 0;
       margin: 0 15px;
       border-bottom: 2px solid transparent;
+      &.active,
       &:hover {
         border-bottom-color: #453a9a;
       }
     }
   }
 }
-
+.body {
+  min-height: calc(100vh - 280px);
+  box-sizing: border-box;
+}
 .footer {
   margin-top: 50px;
   .inner {
