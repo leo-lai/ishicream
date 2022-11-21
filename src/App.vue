@@ -73,9 +73,9 @@ const route = useRoute()
   }
 }
 .inner {
-  width: 1200px;
+  width: 1100px;
+  padding: 0 50px;
   margin: auto;
-  max-width: 100%;
 }
 .btn {
   display: inline-block;
@@ -104,9 +104,9 @@ const route = useRoute()
     display: flex;
     justify-items: center;
     align-items: center;
-    box-sizing: border-box;
     height: 80px;
-    padding: 10px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .logo {
     display: inline-block;
@@ -141,7 +141,8 @@ const route = useRoute()
 .footer {
   margin-top: 50px;
   .inner {
-    padding: 30px 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
     border-top: 1px solid #f1f1f1;
   }
   .logo {

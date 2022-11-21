@@ -304,6 +304,9 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .body {
+  section {
+    min-width: 1200px;
+  }
   .flex {
     align-items: center;
   }
